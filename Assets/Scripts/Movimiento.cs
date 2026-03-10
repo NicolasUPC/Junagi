@@ -3,14 +3,24 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
+    public Transform cameraTransform;
 
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal"); // A y D
-        float moveZ = Input.GetAxis("Vertical");   // W y S
+        float horizontal = Input.GetAxis("Horizontal"); // A D
+        float vertical = Input.GetAxis("Vertical");     // W S
 
-        Vector3 movement = new Vector3(moveX, 0f, moveZ);
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
 
-        transform.Translate(movement * speed * Time.deltaTime);
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 moveDirection = forward * vertical + right * horizontal;
+
+        transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
     }
 }
