@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 810960459}
   - component: {fileID: 810960458}
   - component: {fileID: 810960457}
+  - component: {fileID: 810960460}
   m_Layer: 0
   m_Name: fuego
   m_TagString: Untagged
@@ -5584,13 +5585,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810960456}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.765, y: 0.71, z: -4.803}
-  m_LocalScale: {x: 2.3718, y: 2.3718, z: 2.3718}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0.0020570012, y: 0.010563, z: -0.001395484}
+  m_LocalScale: {x: 1.8154801, y: 1.81548, z: 1.8154804}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1402155517}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &810960460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810960456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235ac20fa25a2df4a848f9ad1262aadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fuego: {fileID: 0}
+  cerilla: 1
+  extintor: 1
 --- !u!1 &830303345
 GameObject:
   m_ObjectHideFlags: 0
@@ -6223,6 +6239,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6304825429432602154, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
+--- !u!4 &1402155517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6185573547027262617, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
+  m_PrefabInstance: {fileID: 1867383927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1517272764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8312503787021720422, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
@@ -6368,7 +6389,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -6185573547027262617, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 810960459}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
       insertIndex: -1
@@ -6426,4 +6450,3 @@ SceneRoots:
   - {fileID: 830303348}
   - {fileID: 1063845071}
   - {fileID: 978194717}
-  - {fileID: 810960459}
