@@ -6,8 +6,7 @@ public class fuego : MonoBehaviour
 	public ParticleSystem Fuego;
 	private ParticleSystemRenderer fuegoRenderer;
 	private bool estadoFuego = false;
-	public bool cerilla = true;
-	public bool extintor = true;
+	public objectManager objectManager;
 
 	void Start()
 	{
@@ -17,21 +16,21 @@ public class fuego : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.E))
 		{
-			if (estadoFuego == false && cerilla == true)
+			if (estadoFuego == false && objectManager.cerilla == true)
 			{
 				Fuego.Play();
 				estadoFuego = true;
 			}
-			if (estadoFuego == true && extintor == true)
+			if (estadoFuego == true && objectManager.extintor == true)
 			{
 				Fuego.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 				estadoFuego = false;
 			}
-			if (estadoFuego == false && cerilla == false)
+			if (estadoFuego == false && objectManager.cerilla == false)
 			{
 				//print de que el jugador necesita la cerilla para quemar el bonsái
 			}
-			if (estadoFuego == true && extintor == false)
+			if (estadoFuego == true && objectManager.extintor == false)
 			{
 				//print de que el jugador necesita el extintor para apagar el fuego del bonsái
 			}

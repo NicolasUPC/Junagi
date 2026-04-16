@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puerta: {fileID: 0}
   llave: {fileID: 0}
+  objectManager: {fileID: 0}
 --- !u!1 &201160258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1633281141255343063, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
@@ -5605,8 +5606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fuego: {fileID: 0}
-  cerilla: 1
-  extintor: 1
+  objectManager: {fileID: 0}
 --- !u!1 &830303345
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,6 +6052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puerta: {fileID: 978194713}
   llave: {fileID: 1063845066}
+  objectManager: {fileID: 0}
 --- !u!1 &1063845066
 GameObject:
   m_ObjectHideFlags: 0
@@ -6383,10 +6384,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6162450726706824772, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f59e8e354bbd3c8498d282d027a892c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
       propertyPath: m_Name
       value: A_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3487943580692059279, guid: 5a37816b38ef2b24d913bf626803a7ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 88b68875cdd415f49964d57f207bb74a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -6438,6 +6447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puerta: {fileID: 0}
   llave: {fileID: 0}
+  objectManager: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

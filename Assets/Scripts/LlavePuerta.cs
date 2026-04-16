@@ -5,6 +5,7 @@ public class LlavePuerta : MonoBehaviour
     public GameObject puerta;
     public GameObject llave;
     private bool cercaDeLlave = false;
+    public objectManager objectManager;
 
     void Update()
     {
@@ -12,6 +13,7 @@ public class LlavePuerta : MonoBehaviour
         {
             puerta.SetActive(false); // desaparece la puerta
             llave.SetActive(false);
+            objectManager.llave1 = true;
         }
     }
 
