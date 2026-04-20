@@ -9,7 +9,7 @@ public class LlavePuerta : MonoBehaviour
 
     void Update()
     {
-        if (cercaDeLlave && Input.GetKeyDown(KeyCode.E))
+        if (cercaDeLlave == true && Input.GetKeyDown(KeyCode.E))
         {
             puerta.SetActive(false); // desaparece la puerta
             llave.SetActive(false);
