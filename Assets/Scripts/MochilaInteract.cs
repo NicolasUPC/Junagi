@@ -8,6 +8,11 @@ public class MochilaInteract : MonoBehaviour
 
     private bool cerca = false;
 
+    void Start()
+    {
+        llave.SetActive(false);
+    }
+
     void Update()
     {
         if (cerca && Input.GetKeyDown(KeyCode.E))

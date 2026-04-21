@@ -6,13 +6,18 @@ public class LlavePuerta : MonoBehaviour
     public GameObject llave;
 
     private bool cercaDeLlave = false;
+    private bool yaUsada = false;
 
     void Update()
     {
-        if (cercaDeLlave && Input.GetKeyDown(KeyCode.E))
+        if (cercaDeLlave && !yaUsada && Input.GetKeyDown(KeyCode.E))
         {
             puerta.SetActive(false);
-            llave.SetActive(false);
+
+            Destroy(llave); 
+
+            yaUsada = true;
+            this.enabled = false; 
         }
     }
 
