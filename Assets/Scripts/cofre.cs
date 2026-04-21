@@ -6,18 +6,24 @@ public class CofreInteractivo : MonoBehaviour
     public float distanciaActivacion = 3f;
     public Animator animator;
 
-    public static bool cofreAbierto = false; 
+    public GameObject gafas; 
+
+    public static bool cofreAbierto = false;
 
     void Update()
     {
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
-        if (distancia <= distanciaActivacion)
+        if (distancia <= distanciaActivacion && !cofreAbierto)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("Cofre abierto");
+
                 animator.SetBool("cofreAbierto", true);
-                cofreAbierto = true; 
+                cofreAbierto = true;
+
+                gafas.SetActive(true); 
             }
         }
     }
