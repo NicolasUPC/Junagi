@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LlavePuerta : MonoBehaviour
 {
-    public GameObject puerta;
+    public Animator puertaAnim; // Arrastra aquí el componente Animator de la puerta
     public GameObject llave;
 
     private bool cercaDeLlave = false;
@@ -10,14 +10,20 @@ public class LlavePuerta : MonoBehaviour
 
     void Update()
     {
+        // Si presionas E, estás cerca y no se ha usado...
         if (cercaDeLlave && !yaUsada && Input.GetKeyDown(KeyCode.E))
         {
-            puerta.SetActive(false);
+            // ACTIVAR ANIMACIÓN
+            if (puertaAnim != null)
+            {
+                puertaAnim.SetTrigger("Abrir"); // Dispara el trigger que creamos
+            }
 
-            Destroy(llave); 
+            // Eliminar la llave
+            Destroy(llave);
 
             yaUsada = true;
-            this.enabled = false; 
+            this.enabled = false;
         }
     }
 
