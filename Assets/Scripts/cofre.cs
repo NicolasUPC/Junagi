@@ -6,7 +6,8 @@ public class CofreInteractivo : MonoBehaviour
     public float distanciaActivacion = 3f;
     public Animator animator;
 
-    public GameObject gafas; 
+    public GameObject gafas;
+    public GameObject cerillas;
 
     public static bool cofreAbierto = false;
 
@@ -23,7 +24,8 @@ public class CofreInteractivo : MonoBehaviour
                 animator.SetBool("cofreAbierto", true);
                 cofreAbierto = true;
 
-                gafas.SetActive(true); 
+                gafas.SetActive(true);
+                cerillas.SetActive(true);
             }
         }
     }

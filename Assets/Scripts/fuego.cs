@@ -8,10 +8,12 @@ public class fuego : MonoBehaviour
 	private bool estadoFuego = false;
 	private bool cercaBonsai = false;
 	public objectManager objectManager;
+	public GameObject hojas;
 
 	void Start()
 	{
-		//Fuego.Stop(true, ParticleSystemBehavior.StopEmittingClear);
+		Fuego.Stop();
+		Fuego.Clear();
 	}
 	void Update()
 	{
@@ -21,6 +23,7 @@ public class fuego : MonoBehaviour
 			{
 				Fuego.Play();
 				estadoFuego = true;
+				Destroy(hojas);
 			}
 			if (estadoFuego == true && objectManager.extintor == true)
 			{
@@ -35,11 +38,15 @@ public class fuego : MonoBehaviour
 			{
 				//print de que el jugador necesita el extintor para apagar el fuego del bonsái
 			}
+			if(estadoFuego == false)
+            {
+				Fuego.Stop(false, ParticleSystemStopBehavior.StopEmitting);
+			}
 		}
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag("bonsai"))
+		if (other.gameObject.CompareTag("Player"))
 		{
 			cercaBonsai = true;
 		}
@@ -47,7 +54,7 @@ public class fuego : MonoBehaviour
 
 	void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.CompareTag("bonsai"))
+		if (other.gameObject.CompareTag("Player"))
 		{
 			cercaBonsai = false;
 		}
