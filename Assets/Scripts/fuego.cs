@@ -1,62 +1,75 @@
 using UnityEngine;
-using System.Collections;
 
 public class fuego : MonoBehaviour
 {
-	public ParticleSystem Fuego;
-	private ParticleSystemRenderer fuegoRenderer;
-	private bool estadoFuego = false;
-	private bool cercaBonsai = false;
-	public objectManager objectManager;
-	public GameObject hojas;
+    public ParticleSystem Fuego;
+    public objectManager objectManager;
+    public GameObject hojas;
 
-	void Start()
-	{
-		Fuego.Stop();
-		Fuego.Clear();
-	}
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.E) && cercaBonsai == true)
-		{
-			if (estadoFuego == false && objectManager.cerilla == true)
-			{
-				Fuego.Play();
-				estadoFuego = true;
-				Destroy(hojas);
-			}
-			if (estadoFuego == true && objectManager.extintor == true)
-			{
-				Fuego.Stop(false, ParticleSystemStopBehavior.StopEmitting);
-				estadoFuego = false;
-			}
-			if (estadoFuego == false && objectManager.cerilla == false)
-			{
-				//print de que el jugador necesita la cerilla para quemar el bonsái
-			}
-			if (estadoFuego == true && objectManager.extintor == false)
-			{
-				//print de que el jugador necesita el extintor para apagar el fuego del bonsái
-			}
-			if(estadoFuego == false)
+    private bool estadoFuego = false;
+    private bool cercaBonsai = false;
+
+    void Start()
+    {
+        Fuego.Stop();
+        Fuego.Clear();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && cercaBonsai)
+        {
+            // ENCENDER
+            if (!estadoFuego)
             {
-				Fuego.Stop(false, ParticleSystemStopBehavior.StopEmitting);
-			}
-		}
-	}
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.gameObject.CompareTag("Player"))
-		{
-			cercaBonsai = true;
-		}
-	}
+                if (objectManager.cerilla)
+                {
+                    Fuego.Play();
+                    estadoFuego = true;
 
-	void OnTriggerExit(Collider other)
-	{
-		if (other.gameObject.CompareTag("Player"))
-		{
-			cercaBonsai = false;
-		}
-	}
+                    // Oculta las hojas
+                    hojas.SetActive(false);
+
+                    Debug.Log("El bonsái se está quemando");
+                }
+                else
+                {
+                    Debug.Log("Necesitas una cerilla");
+                }
+            }
+
+            // APAGAR
+            else
+            {
+                if (objectManager.extintor)
+                {
+                    Fuego.Stop(false, ParticleSystemStopBehavior.StopEmitting);
+
+                    estadoFuego = false;
+
+                    Debug.Log("Fuego apagado");
+                }
+                else
+                {
+                    Debug.Log("Necesitas un extintor");
+                }
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            cercaBonsai = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            cercaBonsai = false;
+        }
+    }
 }
