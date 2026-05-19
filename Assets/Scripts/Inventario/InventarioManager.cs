@@ -3,16 +3,24 @@ using UnityEngine.UI;
 
 public class InventarioManager : MonoBehaviour
 {
-    public GameObject itemPrefab; // Arrastra aquí tu prefab 'ItemSlot'
-    public Transform contenedor;  // Arrastra aquí el 'InventarioContenedor'
+    public static InventarioManager Instancia;
 
-    // Función para añadir el objeto visualmente
-    public void AñadirObjetoAlInventario(Sprite iconoDelObjeto)
+    [Header("Configuración del Inventario")]
+    public Transform contenedorUI; // Aquí arrastraremos el panel InventarioUI
+    public GameObject prefabIcono; // Aquí arrastraremos el molde IconoItem
+
+    private void Awake()
     {
-        // Instanciamos el prefab como hijo del contenedor
-        GameObject nuevoItem = Instantiate(itemPrefab, contenedor);
+        // Esto permite que cualquier objeto llame al inventario fácilmente
+        if (Instancia == null) Instancia = this;
+    }
 
-        // Buscamos el componente Image y le asignamos el sprite del objeto cogido
-        nuevoItem.GetComponent<Image>().sprite = iconoDelObjeto;
+    public void AñadirObjeto(Sprite imagenDelObjeto)
+    {
+        // Creamos una copia del molde de la imagen dentro del panel
+        GameObject nuevoIcono = Instantiate(prefabIcono, contenedorUI);
+
+        // Le asignamos la foto del objeto que acabamos de recoger
+        nuevoIcono.GetComponent<Image>().sprite = imagenDelObjeto;
     }
 }
