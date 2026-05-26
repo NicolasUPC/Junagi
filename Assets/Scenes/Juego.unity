@@ -28616,7 +28616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38993704, g: 0.2628272, b: 0.096871085, a: 0.34901962}
+  m_Color: {r: 0.2378268, g: 0.24491188, b: 0.408805, a: 0.34901962}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -44103,11 +44103,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034008814}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89cb651ad16a3dc43af414a75a3c861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagenParaElInventario: {fileID: 21300000, guid: 804eceadf7ee1344c956a4556b52c9ff, type: 3}
   objectManager: {fileID: 1668123405}
 --- !u!114 &2034008817
 MonoBehaviour:
@@ -44116,7 +44117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034008814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 041df8858c608da4b8415a43019b5822, type: 3}
   m_Name: 
