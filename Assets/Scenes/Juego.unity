@@ -1020,6 +1020,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2fd69d951a2f12a48ae79ef54bee048a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2034008816}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2fd69d951a2f12a48ae79ef54bee048a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2034008817}
   m_SourcePrefab: {fileID: 100100000, guid: 2fd69d951a2f12a48ae79ef54bee048a, type: 3}
 --- !u!1 &154973954
 GameObject:
@@ -17087,6 +17090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eafffddfa18d7964f9f5f3310972fb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagenParaElInventario: {fileID: 21300000, guid: 32300bbdefecb7a46892144bc094a021, type: 3}
   mensajeUI: {fileID: 383554787}
   tiempoVisible: 2
   tiempoFade: 2
@@ -17102,7 +17106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041df8858c608da4b8415a43019b5822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagenParaElInventario: {fileID: 21300000, guid: 6aece73731ef079448a4d5fe5948b75f, type: 3}
+  imagenParaElInventario: {fileID: 21300000, guid: 32300bbdefecb7a46892144bc094a021, type: 3}
 --- !u!1001 &1074698434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28591,7 +28595,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 10
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -28743,6 +28747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdcff45a0430ce4f9f3d7506274575f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagenParaElInventario: {fileID: 21300000, guid: f9471fa4d17564f41bc4116bf1e84f82, type: 3}
   objectManager: {fileID: 1668123405}
 --- !u!65 &1334765130
 BoxCollider:
@@ -44098,12 +44103,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034008814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89cb651ad16a3dc43af414a75a3c861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectManager: {fileID: 1668123405}
+--- !u!114 &2034008817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034008814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041df8858c608da4b8415a43019b5822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenParaElInventario: {fileID: 21300000, guid: 804eceadf7ee1344c956a4556b52c9ff, type: 3}
 --- !u!1 &2050908006
 GameObject:
   m_ObjectHideFlags: 0

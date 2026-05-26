@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using TMPro;
 using System.Collections;
 
@@ -76,5 +76,113 @@ public class Gafas : MonoBehaviour
         );
 
         Destroy(mensajeUI.gameObject); 
+    }
+}
+*/
+
+using UnityEngine;
+using TMPro;
+using System.Collections;
+
+public class Gafas : MonoBehaviour
+{
+    [Header("Inventario")]
+    public Sprite imagenParaElInventario;
+
+    [Header("Mensaje UI")]
+    public TextMeshProUGUI mensajeUI;
+
+    public float tiempoVisible = 2f;
+    public float tiempoFade = 2f;
+
+    private bool jugadorCerca = false;
+
+    // Variable global
+    public static bool tieneGafas = false;
+
+    void Start()
+    {
+        // Ocultar mensaje al iniciar
+        if (mensajeUI != null)
+        {
+            mensajeUI.gameObject.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        if (jugadorCerca && Input.GetKeyDown(KeyCode.E))
+        {
+            Interactuar();
+        }
+    }
+
+    void Interactuar()
+    {
+        // Guardar en inventario
+        InventarioManager.Instancia.AñadirObjeto(imagenParaElInventario);
+
+        // Activar variable
+        tieneGafas = true;
+
+        // Mostrar mensaje
+        if (mensajeUI != null)
+        {
+            StartCoroutine(MostrarMensaje());
+        }
+
+        // Destruir objeto
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorCerca = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorCerca = false;
+        }
+    }
+
+    IEnumerator MostrarMensaje()
+    {
+        mensajeUI.gameObject.SetActive(true);
+
+        Color color = mensajeUI.color;
+        color.a = 1f;
+        mensajeUI.color = color;
+
+        yield return new WaitForSeconds(tiempoVisible);
+
+        float t = 0f;
+
+        while (t < tiempoFade)
+        {
+            t += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(1f, 0f, t / tiempoFade);
+
+            Color c = mensajeUI.color;
+            c.a = alpha;
+            mensajeUI.color = c;
+
+            yield return null;
+        }
+
+        mensajeUI.color = new Color(
+            mensajeUI.color.r,
+            mensajeUI.color.g,
+            mensajeUI.color.b,
+            0f
+        );
+
+        mensajeUI.gameObject.SetActive(false);
     }
 }
