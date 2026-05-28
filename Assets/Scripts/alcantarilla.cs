@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class alcantarilla : MonoBehaviour
 {
-    public float[] posX;
-    public float[] posZ;
-    public float[] rotY;
     private int interactionCount;
     private bool jugadorCerca = false;
     public bool alcantarillaAbierta = false;
     public Animator animator;
     public GameObject Alcantarilla;
+    public GameObject llave6;
+    public GameObject llave6falsa;
+    public objectManager objectManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        llave6.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,29 +21,37 @@ public class alcantarilla : MonoBehaviour
     {
         if (jugadorCerca && Input.GetKeyDown(KeyCode.E))
         {
-            Interactuar();
+            if (objectManager.iman && objectManager.hilo)
+            {
+                Interactuar();
+            }
+            else
+            {
+                Debug.Log("Necesitas el hilo y el imán para alcanzar la tarjeta");
+            }
         }
     }
     void Interactuar()
     {
         interactionCount++;
-        Vector3 posicionActual = transform.position;
         if (interactionCount == 1)
         {
-            Alcantarilla.transform.position = new Vector3(posX[0],posicionActual.y,posZ[0]);
-            Alcantarilla.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotY[0], transform.rotation.eulerAngles.z);
+            animator.SetInteger("interactionCount", 1);
         }
         if (interactionCount == 2)
         {
-            Alcantarilla.transform.position = new Vector3(posX[1], posicionActual.y, posZ[1]);
-            Alcantarilla.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotY[1], transform.rotation.eulerAngles.z);
+            animator.SetInteger("interactionCount", 2);
         }
         if (interactionCount == 3)
         {
-            Alcantarilla.transform.position = new Vector3(posX[2], posicionActual.y, posZ[2]);
-            Alcantarilla.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotY[2], transform.rotation.eulerAngles.z);
+            animator.SetInteger("interactionCount", 3);
             alcantarillaAbierta = true;
             animator.SetBool("alcantarillaAbierta", true);
+            llave6.SetActive(true);
+        }
+        if (interactionCount == 4)
+        {
+            Destroy(llave6falsa);
         }
     }
     void OnTriggerEnter(Collider other)
