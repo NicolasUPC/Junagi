@@ -8,6 +8,8 @@ public class CofreInteractivo : MonoBehaviour
 
     public GameObject gafas;
     public GameObject cerillas;
+    public GameObject hilo;
+    public GameObject iman;
 
     public static bool cofreAbierto = false;
 
@@ -26,6 +28,8 @@ public class CofreInteractivo : MonoBehaviour
 
                 gafas.SetActive(true);
                 cerillas.SetActive(true);
+                hilo.SetActive(true);
+                iman.SetActive(true);
             }
         }
     }

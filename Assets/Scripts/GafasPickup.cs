@@ -86,6 +86,7 @@ using System.Collections;
 
 public class Gafas : MonoBehaviour
 {
+    public objectManager objectManager;
     [Header("Inventario")]
     public Sprite imagenParaElInventario;
 
@@ -124,6 +125,7 @@ public class Gafas : MonoBehaviour
 
         // Activar variable
         tieneGafas = true;
+        objectManager.gafas = true;
 
         // Mostrar mensaje
         if (mensajeUI != null)
