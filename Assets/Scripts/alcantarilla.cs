@@ -57,6 +57,7 @@ public class alcantarilla : MonoBehaviour
         {
             animator.SetInteger("interactionCount", 5);
             animator.SetBool("alcantarillaAbierta", false);
+            alcantarillaAbierta = false;
         }
         if (interactionCount == 6)
         {
