@@ -6,7 +6,7 @@ public class fuego : MonoBehaviour
     public objectManager objectManager;
     public GameObject hojas;
 
-    private bool estadoFuego = false;
+    public bool estadoFuego = false;
     private bool cercaBonsai = false;
 
     void Start()

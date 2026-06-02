@@ -3320,7 +3320,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (5)
+      value: bonsai7
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -3399,7 +3399,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 338567745}
+      addedObject: {fileID: 338567750}
   m_SourcePrefab: {fileID: 100100000, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
 --- !u!4 &338567742 stripped
 Transform:
@@ -3416,7 +3416,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
   m_PrefabInstance: {fileID: 338567741}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &338567745
+--- !u!114 &338567750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3425,13 +3425,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 338567744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fab8cbdb58fe404999c2898504a54fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 235ac20fa25a2df4a848f9ad1262aadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Fuego: {fileID: 713729908}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 338567743}
-  llave: {fileID: 0}
+  estadoFuego: 0
 --- !u!1 &338834771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,7 +3615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (1)
+      value: bonsai2
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -3714,6 +3714,7 @@ MonoBehaviour:
   Fuego: {fileID: 1284122692}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 361541530}
+  estadoFuego: 0
 --- !u!1 &361655543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,7 +5871,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (3)
+      value: bonsai4
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -5969,6 +5970,7 @@ MonoBehaviour:
   Fuego: {fileID: 1499732688}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 612520516}
+  estadoFuego: 0
 --- !u!1001 &617294389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6213,7 +6215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (2)
+      value: bonsai3
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -6312,6 +6314,7 @@ MonoBehaviour:
   Fuego: {fileID: 1015722026}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 668490366}
+  estadoFuego: 0
 --- !u!1001 &679048149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19094,7 +19097,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (5)
+      value: bonsai8
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -19173,7 +19176,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1002599461}
+      addedObject: {fileID: 1002599466}
   m_SourcePrefab: {fileID: 100100000, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
 --- !u!4 &1002599458 stripped
 Transform:
@@ -19190,7 +19193,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
   m_PrefabInstance: {fileID: 1002599457}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1002599461
+--- !u!114 &1002599466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19199,13 +19202,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1002599460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fab8cbdb58fe404999c2898504a54fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 235ac20fa25a2df4a848f9ad1262aadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Fuego: {fileID: 2108045449}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 1002599459}
-  llave: {fileID: 0}
+  estadoFuego: 0
 --- !u!1 &1008639971
 GameObject:
   m_ObjectHideFlags: 0
@@ -31051,7 +31054,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (4)
+      value: bonsai6
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -31118,7 +31121,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1225419729}
+      addedObject: {fileID: 1225419734}
   m_SourcePrefab: {fileID: 100100000, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
 --- !u!4 &1225419726 stripped
 Transform:
@@ -31135,7 +31138,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
   m_PrefabInstance: {fileID: 1225419725}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1225419729
+--- !u!114 &1225419734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31144,13 +31147,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1225419728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fab8cbdb58fe404999c2898504a54fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 235ac20fa25a2df4a848f9ad1262aadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Fuego: {fileID: 1095918802}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 1225419727}
-  llave: {fileID: 1159543559}
+  estadoFuego: 0
 --- !u!1001 &1228717717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31637,7 +31640,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (4)
+      value: bonsai5
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -31737,6 +31740,7 @@ MonoBehaviour:
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 1276564563}
   llave: {fileID: 1922574946}
+  estadoFuego: 0
 --- !u!4 &1278280878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d0c51e3dc723fd419541bf04c3e472d, type: 3}
@@ -44093,6 +44097,7 @@ MonoBehaviour:
   Fuego: {fileID: 810960458}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 120232348}
+  estadoFuego: 0
 --- !u!1 &1578977258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d0c51e3dc723fd419541bf04c3e472d, type: 3}
@@ -44837,7 +44842,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Name
-      value: bonsai (5)
+      value: bonsai9
       objectReference: {fileID: 0}
     - target: {fileID: 8334721362625365880, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       propertyPath: m_Size.x
@@ -44916,7 +44921,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1653243760}
+      addedObject: {fileID: 1653243765}
   m_SourcePrefab: {fileID: 100100000, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
 --- !u!4 &1653243757 stripped
 Transform:
@@ -44933,7 +44938,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2349623699425348730, guid: 4bf383991ebbed34e838d0a337e7ee3c, type: 3}
   m_PrefabInstance: {fileID: 1653243756}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1653243760
+--- !u!114 &1653243765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44942,13 +44947,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1653243759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fab8cbdb58fe404999c2898504a54fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 235ac20fa25a2df4a848f9ad1262aadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Fuego: {fileID: 2139504774}
   objectManager: {fileID: 1668123405}
   hojas: {fileID: 1653243758}
-  llave: {fileID: 0}
+  estadoFuego: 0
 --- !u!1 &1664210949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4256287991634121644, guid: 24490a8bcb0e9b6468cdd0ac0c2d0459, type: 3}
@@ -47389,6 +47394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1828225916}
     - target: {fileID: 4120527507170944389, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120527507170944389, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: puertaAnim
       value: 
       objectReference: {fileID: 2035519329}
@@ -47399,7 +47408,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 874099149034779928, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1828225921}
   m_SourcePrefab: {fileID: 100100000, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
 --- !u!4 &1828225915 stripped
 Transform:
@@ -47411,6 +47423,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 874099149034779928, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
   m_PrefabInstance: {fileID: 1828225914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1828225921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828225916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6fe81835c30544491a7c75d20648f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puertaAnim: {fileID: 2035519329}
+  colisionPuerta: {fileID: 2035519328}
+  llave: {fileID: 1828225916}
+  fuegos:
+  - {fileID: 1575703570}
+  - {fileID: 361541532}
+  - {fileID: 668490368}
+  - {fileID: 612520518}
+  - {fileID: 1225419734}
+  - {fileID: 338567750}
+  - {fileID: 1002599466}
+  fuegoh5: {fileID: 1276564570}
 --- !u!1 &1828295968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 792858852974746827, guid: 7937679fa0593a5488b97950e0e31630, type: 3}

@@ -53,6 +53,19 @@ public class alcantarilla : MonoBehaviour
         {
             Destroy(llave6falsa);
         }
+        if (interactionCount == 5)
+        {
+            animator.SetInteger("interactionCount", 5);
+            animator.SetBool("alcantarillaAbierta", false);
+        }
+        if (interactionCount == 6)
+        {
+            animator.SetInteger("interactionCount", 6);
+        }
+        if (interactionCount == 7)
+        {
+            animator.SetInteger("interactionCount", 7);
+        }
     }
     void OnTriggerEnter(Collider other)
     {
