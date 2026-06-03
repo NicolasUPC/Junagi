@@ -35,19 +35,19 @@ public class GestorMinijuego : MonoBehaviour
     {
         Debug.Log("¡Minijuego completado! Abriendo reja final...");
 
-        // 1. Cambiar material de la 9ª luz
+        // Cambiar material de la 9ª luz
         if (mallaLuzEspecial != null && materialVerdeEspecial != null)
         {
             mallaLuzEspecial.material = materialVerdeEspecial;
         }
 
-        // 2. Cambiar el Tag del Point Light especial a "Verde"
+        // Cambiar el Tag del Point Light especial a "Verde"
         if (luzPuntualEspecial != null)
         {
             luzPuntualEspecial.gameObject.tag = "Verde";
         }
 
-        // 3. Activar la animación de la reja (Trigger "Abrir")
+        // Activar la animación de la reja (Trigger "Abrir")
         if (rejaAnimator != null)
         {
             rejaAnimator.SetTrigger("Abrir");

@@ -52,20 +52,20 @@ public class habitacion8 : MonoBehaviour
     {
         yaUsada = true;
 
-        // 1. Activar la animación
+        // Activar la animación
         if (puertaAnim != null)
         {
             puertaAnim.SetTrigger("Abrir");
         }
 
-        // 2. DESACTIVAR EL COLLIDER (Para que el jugador pueda pasar)
+        // DESACTIVAR EL COLLIDER (Para que el jugador pueda pasar)
         if (colisionPuerta != null)
         {
             colisionPuerta.enabled = false;
             Debug.Log("Collider de la puerta desactivado.");
         }
 
-        // 3. Eliminar la llave visualmente
+        // Eliminar la llave visualmente
         if (llave8 != null)
         {
             Destroy(llave8);

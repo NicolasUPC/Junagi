@@ -3,7 +3,7 @@ using UnityEngine;
 public class LlavePuerta2 : MonoBehaviour
 {
     [Header("Configuración de las Puertas")]
-    // Ahora puedes arrastrar tantos Animators y Colliders como quieras desde el Inspector
+    // puedes arrastrar tantos Animators y Colliders como quieras desde el Inspector
     public Animator[] animatorsPuertas;
     public Collider[] collidersPuertas;
 
@@ -26,7 +26,7 @@ public class LlavePuerta2 : MonoBehaviour
     {
         yaUsada = true;
 
-        // 1. Activar la animación en TODAS las puertas de la lista
+        // Activar la animación en TODAS las puertas de la lista
         if (animatorsPuertas != null)
         {
             foreach (Animator anim in animatorsPuertas)
@@ -38,7 +38,7 @@ public class LlavePuerta2 : MonoBehaviour
             }
         }
 
-        // 2. DESACTIVAR EL COLLIDER en TODAS las puertas de la lista (Para que el jugador pueda pasar)
+        //  DESACTIVAR EL COLLIDER en TODAS las puertas de la lista (Para que el jugador pueda pasar)
         if (collidersPuertas != null)
         {
             foreach (Collider col in collidersPuertas)
@@ -51,7 +51,7 @@ public class LlavePuerta2 : MonoBehaviour
             }
         }
 
-        // 3. Eliminar la llave visualmente
+        // Eliminar la llave visualmente
         if (llave != null)
         {
             Destroy(llave);

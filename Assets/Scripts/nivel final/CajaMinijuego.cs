@@ -56,25 +56,25 @@ public class CajaMinijuego : MonoBehaviour
     {
         yaInteractuada = true;
 
-        // 1. Mostrar el objeto dentro de la caja (y se queda abierta)
+        // Mostrar el objeto dentro de la caja (y se queda abierta)
         if (objetoInterior != null)
         {
             objetoInterior.SetActive(true);
         }
 
-        // 2. Cambiar material de su luz a verde
+        // Cambiar material de su luz a verde
         if (mallaLuz != null && materialVerde != null)
         {
             mallaLuz.material = materialVerde;
         }
 
-        // 3. Cambiar el Tag de su Point Light a "Verde"
+        // Cambiar el Tag de su Point Light a "Verde"
         if (luzPuntual != null)
         {
             luzPuntual.gameObject.tag = "Verde";
         }
 
-        // 4. Avisar al gestor central que sume una caja
+        // Avisar al gestor central que sume una caja
         if (gestor != null)
         {
             gestor.RegistrarCajaCompletada();

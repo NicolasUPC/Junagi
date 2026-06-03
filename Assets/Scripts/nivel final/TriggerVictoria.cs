@@ -30,7 +30,7 @@ public class TriggerVictoria : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Si el jugador cruza el umbral y la victoria aún no ha saltado...
+        // Si el jugador cruza el umbral y la victoria aún no ha saltado.
         if (!victoriaActivada && other.CompareTag("Player"))
         {
             victoriaActivada = true;
@@ -58,8 +58,8 @@ public class TriggerVictoria : MonoBehaviour
             victoriaUI.gameObject.SetActive(true);
             victoriaUI.alpha = 0f;
 
-            // TRUCO EXTREMO: Forzamos a que el menú de botones se mueva al final de la jerarquía
-            // de forma automática por código para obligarlo a dibujarse por encima del fondo blanco.
+            
+            
             victoriaUI.transform.SetAsLastSibling();
 
             // LIBERAMOS EL RATÓN al mismo tiempo para que puedas hacer clic

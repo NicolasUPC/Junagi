@@ -25,20 +25,20 @@ public class LlavePuerta : MonoBehaviour
     {
         yaUsada = true;
 
-        // 1. Activar la animación
+        //Activar la animación
         if (puertaAnim != null)
         {
             puertaAnim.SetTrigger("Abrir");
         }
 
-        // 2. DESACTIVAR EL COLLIDER (Para que el jugador pueda pasar)
+        // DESACTIVAR EL COLLIDER (Para que el jugador pueda pasar)
         if (colisionPuerta != null)
         {
             colisionPuerta.enabled = false;
             Debug.Log("Collider de la puerta desactivado.");
         }
 
-        // 3. Eliminar la llave visualmente
+        // Eliminar la llave visualmente
         if (llave != null)
         {
             Destroy(llave);
@@ -64,31 +64,3 @@ public class LlavePuerta : MonoBehaviour
         }
     }
 }
-//antiguo codigo
-/*using UnityEngine;
-public class LlavePuerta : MonoBehaviour
-{
-    public GameObject puerta; public GameObject llave; private bool cercaDeLlave = false; public objectManager objectManager; void Update()
-    {
-        if (cercaDeLlave == true && Input.GetKeyDown(KeyCode.E))
-        {
-            puerta.SetActive(false); // desaparece la puerta
-            llave.SetActive(false); 
-            objectManager.llave1 = true; 
-        } 
-    } 
-    void OnTriggerEnter(Collider other) 
-    { 
-        if (other.gameObject.CompareTag("Llave"))
-        { cercaDeLlave = true; 
-        } 
-    } 
-    void OnTriggerExit(Collider other) 
-    { 
-        if (other.gameObject.CompareTag("Llave")) 
-        { 
-            cercaDeLlave = false; 
-        } 
-    } 
-}
-*/
