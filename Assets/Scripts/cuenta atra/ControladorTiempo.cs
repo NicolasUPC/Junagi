@@ -208,36 +208,50 @@ public class ControladorTiempo : MonoBehaviour
 */
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; // Necesario para reiniciar la escena
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ControladorTiempo : MonoBehaviour
 {
     [Header("Configuración")]
-    public float tiempoInicial = 600f; // Tiempo en segundos
+    public float tiempoInicial = 600f;
 
     [Header("Referencias UI")]
-    public TextMeshProUGUI textoUI;    // Texto del cronómetro
-    public GameObject menuPausaUI;    // El panel de fondo de la pausa
+    public TextMeshProUGUI textoUI;
+    public GameObject menuPausaUI;
+
+    [Header("Animación Fondo Negro")]
+    public Animator animatorUI;
+
+    [Header("Pantalla Derrota")]
+    public CanvasGroup derrotaUI;
+    public float velocidadFade = 1f; // Menor = más lento
 
     private float tiempoRestante;
     private bool cuentaActiva = false;
     private bool juegoPausado = false;
-    public Animator animatorUI;
 
     void Start()
     {
         tiempoRestante = tiempoInicial;
 
         if (textoUI != null)
-            textoUI.gameObject.SetActive(false); // Oculta el cronómetro al inicio
+            textoUI.gameObject.SetActive(false);
 
         if (menuPausaUI != null)
-            menuPausaUI.SetActive(false);        // Asegura que la pausa esté oculta al iniciar
+            menuPausaUI.SetActive(false);
+
+        if (derrotaUI != null)
+        {
+            derrotaUI.alpha = 0f;
+            derrotaUI.gameObject.SetActive(false);
+            derrotaUI.interactable = false;
+            derrotaUI.blocksRaycasts = false;
+        }
     }
 
     void Update()
     {
-        // Detecta si pulsas la tecla Escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (juegoPausado)
@@ -250,7 +264,6 @@ public class ControladorTiempo : MonoBehaviour
             }
         }
 
-        // Control del cronómetro
         if (cuentaActiva && !juegoPausado)
         {
             if (tiempoRestante > 0)
@@ -272,6 +285,7 @@ public class ControladorTiempo : MonoBehaviour
         if (!cuentaActiva && tiempoRestante == tiempoInicial)
         {
             cuentaActiva = true;
+
             if (textoUI != null)
                 textoUI.gameObject.SetActive(true);
         }
@@ -291,53 +305,98 @@ public class ControladorTiempo : MonoBehaviour
     {
         if (textoUI != null)
             textoUI.text = "00:00";
+
         Debug.Log("La cuenta atrás ha terminado.");
+
+        // Activa la animación del fondo negro
         animatorUI.SetTrigger("FondoNegro");
+        StartCoroutine(MostrarDerrotaConRetraso());
+
+    }
+    IEnumerator MostrarDerrotaConRetraso()
+    {
+        yield return new WaitForSeconds(2f); // Ajusta a la duración de tu animación
+
+        derrotaUI.gameObject.SetActive(true);
+
+        derrotaUI.alpha = 0f;
+
+        while (derrotaUI.alpha < 1f)
+        {
+            derrotaUI.alpha += Time.deltaTime;
+            yield return null;
+        }
+
+        derrotaUI.alpha = 1f;
+    }
+    // Esta función será llamada desde el Animation Event
+    public void MostrarDerrota()
+    {
+        StartCoroutine(FadeInDerrota());
+    }
+
+    IEnumerator FadeInDerrota()
+    {
+        derrotaUI.gameObject.SetActive(true);
+
+        derrotaUI.alpha = 0f;
+        derrotaUI.interactable = false;
+        derrotaUI.blocksRaycasts = false;
+
+        while (derrotaUI.alpha < 1f)
+        {
+            derrotaUI.alpha += Time.unscaledDeltaTime * velocidadFade;
+            yield return null;
+        }
+
+        derrotaUI.alpha = 1f;
+        derrotaUI.interactable = true;
+        derrotaUI.blocksRaycasts = true;
     }
 
     // ==========================================
-    // FUNCIONES PARA LOS BOTONES Y LA PAUSA
+    // PAUSA
     // ==========================================
 
     public void Pausar()
     {
         juegoPausado = true;
-        Time.timeScale = 0f; // Congela el juego y el tiempo físico de Unity
+        Time.timeScale = 0f;
 
-        // DETIENE EL AUDIO: Pausa de forma global todos los sonidos de la escena
         AudioListener.pause = true;
 
         if (menuPausaUI != null)
-            menuPausaUI.SetActive(true); // Muestra el menú de pausa
+            menuPausaUI.SetActive(true);
 
-        Cursor.lockState = CursorLockMode.None; // Libera el ratón para poder hacer clic
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
     public void Reanudar()
     {
         juegoPausado = false;
-        Time.timeScale = 1f; // Devuelve el juego a su velocidad normal
+        Time.timeScale = 1f;
 
-        // REACTIVA EL AUDIO: Hace que todos los sonidos vuelvan a sonar desde donde se quedaron
         AudioListener.pause = false;
 
         if (menuPausaUI != null)
-            menuPausaUI.SetActive(false); // Oculta el menú de pausa
+            menuPausaUI.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void VolverAEmpezar()
     {
-        Time.timeScale = 1f; // Asegura que el juego no se quede congelado
-        AudioListener.pause = false; // Asegura que el audio vuelva a activarse en la nueva partida
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
 
-        // Carga de nuevo la escena actual desde cero
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void SalirDelJuego()
     {
         Debug.Log("Saliendo del juego...");
-        Application.Quit(); // Cierra el juego (en la versión final compilada)
+        Application.Quit();
     }
 }
