@@ -58916,11 +58916,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6fe81835c30544491a7c75d20648f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puertaAnim: {fileID: 0}
-  colisionPuerta: {fileID: 0}
-  llave8: {fileID: 0}
+  puertaAnim: {fileID: 2035519329}
+  colisionPuerta: {fileID: 2035519328}
+  llave8: {fileID: 1828225916}
   fuegos: []
-  fuegoh5: {fileID: 0}
+  fuegoh5: {fileID: 1276564570}
 --- !u!1 &1828295968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 792858852974746827, guid: 7937679fa0593a5488b97950e0e31630, type: 3}
