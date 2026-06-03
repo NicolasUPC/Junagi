@@ -11,6 +11,12 @@ public class GestorMinijuego : MonoBehaviour
     public Animator rejaAnimator;            // El Animator de la reja final
 
     private int cajasCompletadas = 0;
+    public GameObject llaveFinal;
+
+    void Start()
+    {
+        llaveFinal.SetActive(false);
+    }
 
     // Función que llamará cada caja de forma automática al ser resuelta
     public void RegistrarCajaCompletada()
@@ -45,6 +51,7 @@ public class GestorMinijuego : MonoBehaviour
         if (rejaAnimator != null)
         {
             rejaAnimator.SetTrigger("Abrir");
+            llaveFinal.SetActive(true);
         }
     }
 }
