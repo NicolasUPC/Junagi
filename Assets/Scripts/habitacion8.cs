@@ -3,11 +3,11 @@ using UnityEngine;
 public class habitacion8 : MonoBehaviour
 {
     [Header("Configuración de la Puerta")]
-    public Animator puertaAnim;    // Arrastra el objeto con el Animator
-    public Collider colisionPuerta; // Arrastra el objeto que tiene el Box Collider
+    public Animator puertaAnim;    
+    public Collider colisionPuerta; 
 
     [Header("Configuración de la Llave")]
-    public GameObject llave;
+    public GameObject llave8;
 
     private bool cercaDeLlave = false;
     private bool yaUsada = false;
@@ -66,9 +66,9 @@ public class habitacion8 : MonoBehaviour
         }
 
         // 3. Eliminar la llave visualmente
-        if (llave != null)
+        if (llave8 != null)
         {
-            Destroy(llave);
+            Destroy(llave8);
         }
 
         // Desactivar este script para ahorrar recursos

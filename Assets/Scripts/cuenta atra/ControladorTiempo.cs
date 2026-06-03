@@ -213,7 +213,7 @@ using UnityEngine.SceneManagement; // Necesario para reiniciar la escena
 public class ControladorTiempo : MonoBehaviour
 {
     [Header("Configuración")]
-    public float tiempoInicial = 630f; // Tiempo en segundos (630s = 10:30)
+    public float tiempoInicial = 600f; // Tiempo en segundos
 
     [Header("Referencias UI")]
     public TextMeshProUGUI textoUI;    // Texto del cronómetro
@@ -222,6 +222,7 @@ public class ControladorTiempo : MonoBehaviour
     private float tiempoRestante;
     private bool cuentaActiva = false;
     private bool juegoPausado = false;
+    public Animator animatorUI;
 
     void Start()
     {
@@ -291,6 +292,7 @@ public class ControladorTiempo : MonoBehaviour
         if (textoUI != null)
             textoUI.text = "00:00";
         Debug.Log("La cuenta atrás ha terminado.");
+        animatorUI.SetTrigger("FondoNegro");
     }
 
     // ==========================================
