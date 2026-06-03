@@ -3120,7 +3120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &207231759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5919,7 +5919,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 344212899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38241133}
+        m_TargetAssemblyTypeName: ControladorTiempo, Assembly-CSharp
+        m_MethodName: VolverAEmpezar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &344212899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6209,7 +6221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &365025767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6222,10 +6234,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1702454425}
   - {fileID: 1235167665}
   - {fileID: 344212897}
-  - {fileID: 1702454425}
-  m_Father: {fileID: 1716279414}
+  m_Father: {fileID: 1646779933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8736,6 +8748,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 58448ce1a3421a84ba4252cde985ff49, type: 3}
   m_PrefabInstance: {fileID: 540445186}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &544253148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544253151}
+  - component: {fileID: 544253150}
+  - component: {fileID: 544253149}
+  m_Layer: 0
+  m_Name: Trigger_Victoria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &544253149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544253148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d696e3ecdf0bb4eb5dcdefaedc98f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorUI: {fileID: 1716279415}
+  victoriaUI: {fileID: 365025768}
+  velocidadFade: 1
+--- !u!65 &544253150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544253148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.08, y: 0.16, z: 0.27}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &544253151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544253148}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -61.42, y: 2.26, z: -3.15}
+  m_LocalScale: {x: 39.057728, y: 39.057728, z: 41.0692}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &548774667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24546,9 +24627,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectManager: {fileID: 1668123405}
   animator: {fileID: 943350561}
-  animatorUI: {fileID: 1716279415}
-  victoriaUI: {fileID: 365025768}
-  velocidadFade: 1
+--- !u!65 &943350566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943350559}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.014, y: 0.33, z: 0.09}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &953661572
 GameObject:
   m_ObjectHideFlags: 0
@@ -25432,7 +25531,7 @@ Transform:
   m_GameObject: {fileID: 1008639971}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.25, y: 1.608, z: -1.03}
+  m_LocalPosition: {x: -31.62, y: 1.608, z: -1.73}
   m_LocalScale: {x: 1, y: 1.4976, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39545,7 +39644,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1235167667}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38241133}
+        m_TargetAssemblyTypeName: ControladorTiempo, Assembly-CSharp
+        m_MethodName: SalirDelJuego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1235167667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47878,7 +47989,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1493504313}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38241133}
+        m_TargetAssemblyTypeName: ControladorTiempo, Assembly-CSharp
+        m_MethodName: VolverAEmpezar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1493504313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54680,6 +54803,7 @@ RectTransform:
   - {fileID: 953661573}
   - {fileID: 1998658896}
   - {fileID: 1716279414}
+  - {fileID: 365025767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -54934,7 +55058,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1653073963}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38241133}
+        m_TargetAssemblyTypeName: ControladorTiempo, Assembly-CSharp
+        m_MethodName: SalirDelJuego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1653073963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56994,7 +57130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1716279414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57007,7 +57143,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 365025767}
   - {fileID: 207231759}
   m_Father: {fileID: 1646779933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57052,7 +57187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -58665,11 +58800,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 534446385345343394, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1381261
+      value: 1.1381263
       objectReference: {fileID: 0}
     - target: {fileID: 534446385345343394, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.13800287
+      value: 0.13800286
       objectReference: {fileID: 0}
     - target: {fileID: 534446385345343394, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: m_LocalScale.z
@@ -58681,11 +58816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534446385345343394, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1108
+      value: 0.11079998
       objectReference: {fileID: 0}
     - target: {fileID: 534446385345343394, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0932
+      value: -0.09320002
       objectReference: {fileID: 0}
     - target: {fileID: 534446385345343394, guid: a16a8272412b5ae4389988cf24679f97, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58781,18 +58916,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6fe81835c30544491a7c75d20648f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puertaAnim: {fileID: 2035519329}
-  colisionPuerta: {fileID: 2035519328}
-  llave8: {fileID: 1828225916}
-  fuegos:
-  - {fileID: 1575703570}
-  - {fileID: 361541532}
-  - {fileID: 668490368}
-  - {fileID: 612520518}
-  - {fileID: 1225419734}
-  - {fileID: 338567750}
-  - {fileID: 1002599466}
-  fuegoh5: {fileID: 1276564570}
+  puertaAnim: {fileID: 0}
+  colisionPuerta: {fileID: 0}
+  llave8: {fileID: 0}
+  fuegos: []
+  fuegoh5: {fileID: 0}
 --- !u!1 &1828295968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 792858852974746827, guid: 7937679fa0593a5488b97950e0e31630, type: 3}
@@ -72872,6 +73000,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 048eba4aa3a411748a63f876cc32eaae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 943350564}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 048eba4aa3a411748a63f876cc32eaae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 943350566}
   m_SourcePrefab: {fileID: 100100000, guid: 048eba4aa3a411748a63f876cc32eaae, type: 3}
 --- !u!1 &2124260154
 GameObject:
@@ -79776,6 +79907,7 @@ SceneRoots:
   - {fileID: 1335706050}
   - {fileID: 876906695}
   - {fileID: 1643081457927085886}
+  - {fileID: 544253151}
   - {fileID: 2120445755}
   - {fileID: 1560442234}
   - {fileID: 1669435996}
